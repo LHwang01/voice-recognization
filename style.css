@@ -2,10 +2,8 @@ body {
     background-color: gray;
 }
 
-h1 {
-    text-align: center;
-}
-
-p {
+h1,
+p,
+div {
     text-align: center;
 }
