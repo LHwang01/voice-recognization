@@ -1,22 +1,32 @@
 const button = document.getElementById("button");
 var recognition = new webkitSpeechRecognition();
 
-function getVoice() {
-    recognition.onresult = function (event) {
-        console.log(event.results[0][0].transcript);
-    }
-}
-
 button.addEventListener("click", () => {
-    getVoice();
-
     if (button.innerText === "Speak") {
         recognition.start();
-        getVoice();
         button.innerText = "Stop";
     } else {
         recognition.stop();
-        getVoice();
         button.innerText = "Speak";
+    }
+
+    recognition.onresult = function (event) {
+        // console.log(event.results[0][0].transcript);
+        let wordSpoken = event.results[0][0].transcript + "";
+        wordSpoken = wordSpoken.toLowerCase();
+
+        if (wordSpoken == "apple") {
+            console.log("apple");
+        } else if (wordSpoken == "grapes") {
+            console.log("grapes");
+        } else if (wordSpoken == "Orange") {
+            console.log("orange");
+        } else if (wordSpoken == "pear" || wordSpoken == "pair") {
+            console.log("pear");
+        } else if (wordSpoken == "watermelon") {
+            console.log("watermelon")
+        } else {
+            console.log("unknown");
+        }
     }
 });
