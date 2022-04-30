@@ -34,7 +34,7 @@ button.addEventListener("click", () => {
         if (wordSpoken == "apple") {
             apple.style = "display: inline;";
             console.log("apple");
-        } else if (wordSpoken == "grapes") {
+        } else if (wordSpoken == "grapes" || wordSpoken == "grape") {
             grapes.style = "display: inline";
             console.log("grapes");
         } else if (wordSpoken == "orange") {
