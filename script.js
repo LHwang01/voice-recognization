@@ -1,19 +1,22 @@
 const button = document.getElementById("button");
+var recognition = new webkitSpeechRecognition();
 
 function getVoice() {
-    var recognition = new webkitSpeechRecognition();
     recognition.onresult = function (event) {
         console.log(event.results[0][0].transcript);
     }
-
-    recognition.start();
 }
 
-button.addEventListener("click", ()=>{
+button.addEventListener("click", () => {
+    getVoice();
 
-    if(button.innerText === "Speak"){
+    if (button.innerText === "Speak") {
+        recognition.start();
+        getVoice();
         button.innerText = "Stop";
-    }else{
-        button.innerText= "Speak";
+    } else {
+        recognition.stop();
+        getVoice();
+        button.innerText = "Speak";
     }
 });
