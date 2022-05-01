@@ -3,6 +3,7 @@ const grapes = document.getElementById("grapes");
 const orange = document.getElementById("orange");
 const pear = document.getElementById("pear");
 const watermelon = document.getElementById("watermelon");
+const unknown = document.getElementById("unknown");
 
 const button = document.getElementById("button");
 var recognition = new webkitSpeechRecognition();
@@ -13,6 +14,7 @@ function clearVisibility() {
     orange.style = "display: none;";
     pear.style = "display: none;";
     watermelon.style = "display: none;";
+    unknown.style = "display: none;"
 }
 
 button.addEventListener("click", () => {
@@ -47,6 +49,7 @@ button.addEventListener("click", () => {
             watermelon.style = "display: inline";
             console.log("watermelon")
         } else {
+            unknown.style = "display: inline";
             console.log("unknown");
         }
 
