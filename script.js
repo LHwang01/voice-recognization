@@ -17,6 +17,13 @@ function clearVisibility() {
     unknown.style = "display: none;"
 }
 
+function help() {
+    let speech = new SpeechSynthesisUtterance();
+    speech.lang = "en";
+    speech.text = "Say the name of one of the objects on the screen. Say about to hear more about the program";
+    speechSynthesis.speak(speech);
+}
+
 button.addEventListener("click", () => {
     if (button.innerText === "Speak") {
         recognition.start();
@@ -33,7 +40,9 @@ button.addEventListener("click", () => {
         let wordSpoken = event.results[0][0].transcript + "";
         wordSpoken = wordSpoken.toLowerCase();
 
-        if (wordSpoken == "apple") {
+        if (wordSpoken = "help") {
+            help();
+        } else if (wordSpoken == "apple") {
             apple.style = "display: inline;";
         } else if (wordSpoken == "grapes" || wordSpoken == "grape") {
             grapes.style = "display: inline";
