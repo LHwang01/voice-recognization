@@ -49,5 +49,7 @@ button.addEventListener("click", () => {
         } else {
             console.log("unknown");
         }
+
+        button.innerText = "Speak";
     }
 });
