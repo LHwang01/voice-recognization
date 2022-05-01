@@ -42,23 +42,23 @@ button.addEventListener("click", () => {
     clearVisibility();
 
     recognition.onresult = function (event) {
-        // console.log(event.results[0][0].transcript);
         let wordSpoken = event.results[0][0].transcript + "";
         wordSpoken = wordSpoken.toLowerCase();
 
-        if (wordSpoken = "help") {
+        // console.log(wordSpoken);
+
+        if (wordSpoken == "help") {
             help();
-        } else if (wordSpoken = "about") {
+        } else if (wordSpoken == "about") {
             about();
-        }
-        else if (wordSpoken == "apple") {
+        } else if (wordSpoken == "apple") {
             apple.style = "display: inline;";
         } else if (wordSpoken == "grapes" || wordSpoken == "grape") {
             grapes.style = "display: inline";
         } else if (wordSpoken == "orange") {
             orange.style = "display: inline";
         } else if (wordSpoken == "pear" || wordSpoken == "pair") {
-            pear. style = "display: inline";
+            pear.style = "display: inline";
         } else if (wordSpoken == "watermelon") {
             watermelon.style = "display: inline";
         } else {
