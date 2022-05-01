@@ -35,22 +35,16 @@ button.addEventListener("click", () => {
 
         if (wordSpoken == "apple") {
             apple.style = "display: inline;";
-            console.log("apple");
         } else if (wordSpoken == "grapes" || wordSpoken == "grape") {
             grapes.style = "display: inline";
-            console.log("grapes");
         } else if (wordSpoken == "orange") {
             orange.style = "display: inline";
-            console.log("orange");
         } else if (wordSpoken == "pear" || wordSpoken == "pair") {
             pear. style = "display: inline";
-            console.log("pear");
         } else if (wordSpoken == "watermelon") {
             watermelon.style = "display: inline";
-            console.log("watermelon")
         } else {
             unknown.style = "display: inline";
-            console.log("unknown");
         }
 
         button.innerText = "Speak";
