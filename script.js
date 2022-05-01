@@ -8,6 +8,9 @@ const unknown = document.getElementById("unknown");
 const button = document.getElementById("button");
 var recognition = new webkitSpeechRecognition();
 
+let speech = new SpeechSynthesisUtterance();
+speech.lang = "en";
+
 function clearVisibility() {
     apple.style = "display: none;";
     grapes.style = "display: none;";
@@ -18,9 +21,12 @@ function clearVisibility() {
 }
 
 function help() {
-    let speech = new SpeechSynthesisUtterance();
-    speech.lang = "en";
-    speech.text = "Say the name of one of the objects on the screen. Say about to hear more about the program";
+    speech.text = "Say the name of one of the objects on the screen for it to appear. Say about to hear more about the program";
+    speechSynthesis.speak(speech);
+}
+
+function about() {
+    speech.text = "Lawrence Hwang. Copyright 2022.";
     speechSynthesis.speak(speech);
 }
 
@@ -42,7 +48,10 @@ button.addEventListener("click", () => {
 
         if (wordSpoken = "help") {
             help();
-        } else if (wordSpoken == "apple") {
+        } else if (wordSpoken = "about") {
+            about();
+        }
+        else if (wordSpoken == "apple") {
             apple.style = "display: inline;";
         } else if (wordSpoken == "grapes" || wordSpoken == "grape") {
             grapes.style = "display: inline";
